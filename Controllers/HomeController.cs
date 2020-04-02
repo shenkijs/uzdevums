@@ -21,7 +21,7 @@ namespace quiz.Controllers
         public IActionResult Index()
         {
             return View();
-        }//test
+        }
 
         public IActionResult Privacy()
         {
