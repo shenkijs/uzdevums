@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Correct";
+}
+
+<h2>Rezultāti!</h2>
+
+@for (int i = 0; i < QuestionRepository.Questions.Count; i++)
+{
+    string s = "";
+    <a>@(i + 1) . Jautājums -
+    @if (QuestionRepository.Questions[i].CorrectAnswerIndex == QuestionRepository.Questions[i].GivenAnswerIndex)
+    {
+        s = "Pareizi";
+    }
+    else
+    {
+        s = "nepareizi";
+    }
+        @s</a>
+        <br>
+}

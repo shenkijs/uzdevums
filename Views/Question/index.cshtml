@@ -1,0 +1,27 @@
+@model List<Question>
+
+@{
+    ViewData["Title"] = "Questions";
+}
+
+<div class="text-center">
+   <div>@Model[ViewBag.CurrentQuestion].Text</div>
+   <ul>
+   @for(int i=0;i<Model[ViewBag.CurrentQuestion].Answers.Count;i++){
+       <button>@Model[ViewBag.CurrentQuestion].Answers[i]</button><br>
+   }
+   </ul>
+</div>
+
+
+
+@section QuestionLinks{
+
+     <ul class=" navbar-nav flex-grow-1">
+         @for(int i =0;i<Model.Count;i++){
+        <button>
+            <a asp-area="" asp-controller="Question" asp-action="Question" asp-route-id="@i">jaut@(i+1)</a>
+            </button>
+         }
+    </ul>
+}
